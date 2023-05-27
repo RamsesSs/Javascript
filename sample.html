@@ -2,25 +2,36 @@
   <head>
     <meta charset="UTF-8" />
     <script>
-      function check() {
-        var a = document.getElementById("i0").value;
-        console.log(a);
-        var b = document.getElementById("i1").value;
-        if (a == b) {
-          document.getElementById("result").textContent = "同じ！";
-        } else {
-          document.getElementById("result").textContent = "はずれ";
+      function Pen(color, length){
+        this.color = color;
+        this.length = length;
+        this.draw = function(){
+          this.length -= 1;
         }
       }
+      var penR = new Pen("red", 15);
+      var penG = new Pen("green", 20);
+      var penB = new Pen("blue", 8);
+      var pen = penR;
+
+      function stroke(){
+        pen.draw();
+        var pencil = document.getElementById("pencil");
+        pencil.style.width = pen.length + "cm";
+        pencil.style.backgroundColor = pen.color;
+        pencil.textContent = "色＝" + pen.color + "長さ＝" + pen.length;
+      }
+      function pickR(){pen = penR;}
+      function pickG(){pen = penG;}
+      function pickB(){pen = penB;}
     </script>
-    <title>みんなの料理</title>
+    <title>色鉛筆</title>
   </head>
   <body>
-    <h2>神経衰弱</h2>
-    ifelse.html
-    カード１:<input id="i0" value="3" /> 
-    カード２:<input id="i1" value="5" />
-    <button onclick="check()">check</button>
-    <p id="result">     </p>
+    <button onclick="pickR()">赤を選ぶ</button>
+    <button onclick="pickG()">緑を選ぶ</button>
+    <button onclick="pickB()">青を選ぶ</button> 
+    <button onclick="stroke()">書く</button>
+    <p id="pencil" style="background-color: red; width: 5cm;"></p>
   </body>
 </html>
