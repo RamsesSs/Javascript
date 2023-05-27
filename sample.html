@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="sample.css">
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      function check() {
+        var a = document.getElementById("i0").value;
+        console.log(a);
+        var b = document.getElementById("i1").value;
+        if (a == b) {
+          document.getElementById("result").textContent = "同じ！";
+        } else {
+          document.getElementById("result").textContent = "はずれ";
+        }
+      }
+    </script>
+    <title>みんなの料理</title>
+  </head>
+  <body>
+    <h2>神経衰弱</h2>
+    ifelse.html
+    カード１:<input id="i0" value="3" /> 
+    カード２:<input id="i1" value="5" />
+    <button onclick="check()">check</button>
+    <p id="result">     </p>
+  </body>
 </html>
