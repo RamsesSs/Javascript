@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+body{
+    background-color: #fffeee;
+}
+h1{
+    color:  #0bd;
+    font-size: 2rem;
+    font-family: "メイリオ";
+}
+h2{
+    font-size: 20px;
+    font-family: "メイリオ";
+}
+p{
+    font-size: 16px;
+    font-family: "メイリオ";
+}
+div p{
+    color: red;
+}
